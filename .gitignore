@@ -40,6 +40,26 @@ venv.bak/
 *.sqlite
 *.sqlite3
 
+# Logs
+*.log
+
+# PDFs generados
+*.pdf
+!docs/*.pdf
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Archivos de backup
+*.bak
+*~
+
+# Releases y builds
+releases/
+InstaFix_Installer*/
+InstaFix_v*.zip
+
 # IDE
 .vscode/
 .idea/
@@ -48,6 +68,11 @@ venv.bak/
 
 # Sistema operativo
 .DS_Store
+Thumbs.db
+
+# Archivos de test
+test_*.py
+!tests/
 Thumbs.db
 
 # Logs
