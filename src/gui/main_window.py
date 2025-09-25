@@ -91,10 +91,40 @@ class MainWindow:
         style = ttk.Style()
         style.theme_use('clam')
         
-        # Colores personalizados
+        # Colores personalizados para labels
         style.configure('Title.TLabel', font=('Arial', 16, 'bold'))
         style.configure('Subtitle.TLabel', font=('Arial', 10))
         style.configure('Status.TLabel', font=('Arial', 9))
+        
+        # Estilos personalizados para botones con colores más visibles
+        style.configure('Primary.TButton', 
+                       font=('Arial', 11, 'bold'),
+                       padding=(15, 10),
+                       borderwidth=3,
+                       relief='raised',
+                       focuscolor='blue')
+        style.configure('Secondary.TButton', 
+                       font=('Arial', 10),
+                       padding=(12, 8),
+                       borderwidth=2,
+                       relief='raised')
+        style.configure('Cancel.TButton', 
+                       font=('Arial', 10),
+                       padding=(12, 8),
+                       borderwidth=2,
+                       relief='raised')
+        
+        # Estilos específicos para diálogos con mayor contraste
+        style.configure('Dialog.Primary.TButton', 
+                       font=('Arial', 12, 'bold'),
+                       padding=(20, 15),
+                       borderwidth=3,
+                       relief='raised')
+        style.configure('Dialog.Cancel.TButton', 
+                       font=('Arial', 11),
+                       padding=(20, 15),
+                       borderwidth=2,
+                       relief='raised')
     
     def _create_menu(self):
         """Crear la barra de menú"""

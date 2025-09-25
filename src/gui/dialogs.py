@@ -241,7 +241,7 @@ class ReparacionDialog:
         
         # Botones - Frame con mejor estilo y más espacio
         buttons_frame = ttk.Frame(main_frame)
-        buttons_frame.pack(fill=tk.X, pady=(40, 20))  # Más padding arriba y abajo
+        buttons_frame.pack(fill=tk.X, pady=(2, 2))  # Espaciado mínimo
         
         # Crear frame interno centrado para los botones
         buttons_inner = ttk.Frame(buttons_frame)
@@ -256,12 +256,12 @@ class ReparacionDialog:
         # Botón Cancelar - más grande y visible
         cancel_btn = ttk.Button(buttons_inner, text="❌ Cancelar", 
                                command=self._cancel, width=18)  # Más ancho
-        cancel_btn.pack(side=tk.LEFT, padx=(0, 30), pady=10)  # Más separación
+        cancel_btn.pack(side=tk.LEFT, padx=(0, 30), pady=2)  # Espaciado mínimo
         
         # Botón Guardar - más grande y como botón principal
         save_btn = ttk.Button(buttons_inner, text=guardar_text, 
                              command=self._save, width=25)  # Más ancho
-        save_btn.pack(side=tk.LEFT, pady=10)
+        save_btn.pack(side=tk.LEFT, pady=2)  # Espaciado mínimo
         
         # Hacer que el botón Guardar sea el predeterminado
         save_btn.focus_set()
@@ -466,7 +466,7 @@ class WhatsAppDialog:
         
         # Botones
         buttons_frame = ttk.Frame(main_frame)
-        buttons_frame.pack(fill=tk.X, pady=(20, 0))
+        buttons_frame.pack(fill=tk.X, pady=(2, 0))  # Espaciado mínimo
         
         ttk.Button(buttons_frame, text="❌ Cancelar", command=self._cancel).pack(side=tk.RIGHT, padx=(10, 0))
         ttk.Button(buttons_frame, text="📱 Abrir WhatsApp Web", command=self._send).pack(side=tk.RIGHT)
@@ -658,7 +658,7 @@ class ConfigDialog:
         
         # Frame de botones
         buttons_frame = ttk.Frame(main_frame)
-        buttons_frame.pack(fill=tk.X, pady=(20, 10))
+        buttons_frame.pack(fill=tk.X, pady=(2, 2))  # Espaciado mínimo
         
         # Frame interno centrado para los botones
         buttons_inner = ttk.Frame(buttons_frame)
@@ -667,11 +667,11 @@ class ConfigDialog:
         # Botones con el mismo estilo que ReparacionDialog
         cancel_btn = ttk.Button(buttons_inner, text="❌ Cancelar", 
                                command=self._cancel, width=18)
-        cancel_btn.pack(side=tk.LEFT, padx=(0, 30), pady=10)
+        cancel_btn.pack(side=tk.LEFT, padx=(0, 30), pady=2)  # Espaciado mínimo
         
         save_btn = ttk.Button(buttons_inner, text="✅ Guardar Configuración", 
                              command=self._save, width=25)
-        save_btn.pack(side=tk.LEFT, pady=10)
+        save_btn.pack(side=tk.LEFT, pady=2)  # Espaciado mínimo
         
         # Hacer que el botón Guardar sea el predeterminado
         save_btn.focus_set()
@@ -714,10 +714,10 @@ class ConfigDialog:
             return
         
         # Obtener horarios sin placeholder
-        horarios_placeholder = "Ejemplo:\nLunes a Viernes: 9:00 - 18:00\nSábados: 9:00 - 14:00\nDomingos: Cerrado"
+        horarios_placeholder = "Ejemplo:\nLunes a Viernes: 9:00 - 18:00\nSábados: 9:00 - 14:00"
         horarios_text = self.business_hours_text.get(1.0, tk.END).strip()
         if horarios_text == horarios_placeholder:
-            horarios_text = "Lunes a Viernes 9:00-18:00"
+            horarios_text = ""
         
         self.result = {
             'business_name': self.business_name_var.get().strip(),

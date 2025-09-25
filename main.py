@@ -36,17 +36,9 @@ logger = logging.getLogger(__name__)
 def main():
     """Función principal que inicia la aplicación"""
     try:
-        # Cargar variables de entorno
-        load_dotenv()
-        
-        # Verificar que existe el archivo .env
-        if not os.path.exists('.env'):
-            logger.warning("Archivo .env no encontrado. Crea uno basado en .env.example")
-            messagebox.showwarning(
-                "Configuración",
-                "Archivo .env no encontrado.\n"
-                "Crea uno basado en .env.example para configurar WhatsApp."
-            )
+        # Cargar variables de entorno si existe el archivo
+        if os.path.exists('.env'):
+            load_dotenv()
         
         # Inicializar base de datos
         logger.info("Inicializando base de datos...")
